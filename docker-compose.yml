@@ -1,0 +1,13 @@
+version: '2.19.1'
+services: 
+  web:
+    image: .
+    ports:
+      - "81:5000"
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "your_password"
+      MYSQL_DATABASE: "crud_db"
+    volumes:
+     - ./db:/docker-entrypoint-initdb.d/
